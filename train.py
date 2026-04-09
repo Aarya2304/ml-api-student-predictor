@@ -19,3 +19,13 @@ model.fit(X, y)
 
 with open("model.pkl", "wb") as f:
     pickle.dump(model, f)
+
+
+with open("model.pkl", "rb") as f:
+    model = pickle.load(f)
+
+
+sample_input = [[5,80]]
+prediction = model.predict(sample_input)
+
+print("Predicted score:", prediction[0])
